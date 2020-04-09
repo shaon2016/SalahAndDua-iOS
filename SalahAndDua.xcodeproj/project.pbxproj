@@ -10,6 +10,8 @@
 		C8EB9378B68BE8F087A91E09 /* Pods_SalahAndDua.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D76F24636B3ED7F3059EC42F /* Pods_SalahAndDua.framework */; };
 		CE51CF0E243DF7090085D84E /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE51CF0D243DF7090085D84E /* ApiService.swift */; };
 		CE6A061A243E318C0059E8DC /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A0619243E318C0059E8DC /* Calendar.swift */; };
+		CE87A29B243F771200374B6C /* DB.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE87A29A243F771200374B6C /* DB.swift */; };
+		CE87A29D243F9A2700374B6C /* DbHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE87A29C243F9A2700374B6C /* DbHelper.swift */; };
 		CEE3EDE1243B8374006C1810 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE3EDE0243B8374006C1810 /* AppDelegate.swift */; };
 		CEE3EDE3243B8374006C1810 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE3EDE2243B8374006C1810 /* SceneDelegate.swift */; };
 		CEE3EDEA243B8376006C1810 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE3EDE9243B8376006C1810 /* Assets.xcassets */; };
@@ -21,6 +23,8 @@
 /* Begin PBXFileReference section */
 		CE51CF0D243DF7090085D84E /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		CE6A0619243E318C0059E8DC /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
+		CE87A29A243F771200374B6C /* DB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DB.swift; sourceTree = "<group>"; };
+		CE87A29C243F9A2700374B6C /* DbHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DbHelper.swift; sourceTree = "<group>"; };
 		CEE3EDDD243B8374006C1810 /* SalahAndDua.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SalahAndDua.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEE3EDE0243B8374006C1810 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEE3EDE2243B8374006C1810 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +50,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE87A295243F768800374B6C /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				CE87A299243F76EC00374B6C /* Library */,
+				CE87A298243F76E700374B6C /* Constant */,
+				CE87A296243F76B000374B6C /* Helper */,
+				CE87A29A243F771200374B6C /* DB.swift */,
+				CE87A29C243F9A2700374B6C /* DbHelper.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		CE87A296243F76B000374B6C /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		CE87A298243F76E700374B6C /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		CE87A299243F76EC00374B6C /* Library */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
 		CEE3EDD4243B8374006C1810 = {
 			isa = PBXGroup;
 			children = (
@@ -67,6 +104,7 @@
 		CEE3EDDF243B8374006C1810 /* SalahAndDua */ = {
 			isa = PBXGroup;
 			children = (
+				CE87A295243F768800374B6C /* Shared */,
 				CE51CF0D243DF7090085D84E /* ApiService.swift */,
 				CEF7D95B243B8A7F00F8E3A2 /* App */,
 				CEE3EDF4243B847F006C1810 /* Features */,
@@ -262,7 +300,9 @@
 			files = (
 				CEF7D95E243B8C8700F8E3A2 /* HomeVC.swift in Sources */,
 				CEE3EDE1243B8374006C1810 /* AppDelegate.swift in Sources */,
+				CE87A29B243F771200374B6C /* DB.swift in Sources */,
 				CE51CF0E243DF7090085D84E /* ApiService.swift in Sources */,
+				CE87A29D243F9A2700374B6C /* DbHelper.swift in Sources */,
 				CEE3EDE3243B8374006C1810 /* SceneDelegate.swift in Sources */,
 				CE6A061A243E318C0059E8DC /* Calendar.swift in Sources */,
 			);
