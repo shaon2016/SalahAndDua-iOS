@@ -10,6 +10,7 @@ import Foundation
 import SQLite
 
 class DbHelper {
+    static let shared = DbHelper()
     
     private let dbPath = "mydb.sqlite"
     
@@ -36,7 +37,7 @@ class DbHelper {
         createCalendarTable()
     }
     
-    func openDb()   {
+    private func openDb()   {
         let path = NSSearchPathForDirectoriesInDomains(
             .documentDirectory, .userDomainMask, true
         ).first!
@@ -49,7 +50,7 @@ class DbHelper {
         
     }
     
-    func createCalendarTable() {
+    private func createCalendarTable() {
         
         do {
             try connection?.run(calenderTable.create { t in
@@ -125,5 +126,10 @@ class DbHelper {
         } catch let error {
             print("Deletion failed for calendar table: \(error)")
         }
+    }
+    
+    // Close db is autometically done by this library
+    func closeDb() {
+        
     }
 }

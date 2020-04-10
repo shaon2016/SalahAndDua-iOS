@@ -9,8 +9,9 @@
 /* Begin PBXBuildFile section */
 		C8EB9378B68BE8F087A91E09 /* Pods_SalahAndDua.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D76F24636B3ED7F3059EC42F /* Pods_SalahAndDua.framework */; };
 		CE51CF0E243DF7090085D84E /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE51CF0D243DF7090085D84E /* ApiService.swift */; };
+		CE633A972440CED700E94566 /* LLSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE633A962440CED700E94566 /* LLSpinner.swift */; };
+		CE633A9B2440EFA000E94566 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE633A9A2440EFA000E94566 /* Util.swift */; };
 		CE6A061A243E318C0059E8DC /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A0619243E318C0059E8DC /* Calendar.swift */; };
-		CE87A29B243F771200374B6C /* DB.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE87A29A243F771200374B6C /* DB.swift */; };
 		CE87A29D243F9A2700374B6C /* DbHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE87A29C243F9A2700374B6C /* DbHelper.swift */; };
 		CEE3EDE1243B8374006C1810 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE3EDE0243B8374006C1810 /* AppDelegate.swift */; };
 		CEE3EDE3243B8374006C1810 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE3EDE2243B8374006C1810 /* SceneDelegate.swift */; };
@@ -22,8 +23,9 @@
 
 /* Begin PBXFileReference section */
 		CE51CF0D243DF7090085D84E /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		CE633A962440CED700E94566 /* LLSpinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLSpinner.swift; sourceTree = "<group>"; };
+		CE633A9A2440EFA000E94566 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		CE6A0619243E318C0059E8DC /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
-		CE87A29A243F771200374B6C /* DB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DB.swift; sourceTree = "<group>"; };
 		CE87A29C243F9A2700374B6C /* DbHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DbHelper.swift; sourceTree = "<group>"; };
 		CEE3EDDD243B8374006C1810 /* SalahAndDua.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SalahAndDua.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEE3EDE0243B8374006C1810 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -50,14 +52,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE1E96632440C5FA00858C97 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				CE87A29C243F9A2700374B6C /* DbHelper.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		CE87A295243F768800374B6C /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				CE1E96632440C5FA00858C97 /* Data */,
 				CE87A299243F76EC00374B6C /* Library */,
 				CE87A298243F76E700374B6C /* Constant */,
 				CE87A296243F76B000374B6C /* Helper */,
-				CE87A29A243F771200374B6C /* DB.swift */,
-				CE87A29C243F9A2700374B6C /* DbHelper.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -65,6 +74,7 @@
 		CE87A296243F76B000374B6C /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				CE633A9A2440EFA000E94566 /* Util.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -79,6 +89,7 @@
 		CE87A299243F76EC00374B6C /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				CE633A962440CED700E94566 /* LLSpinner.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -299,8 +310,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEF7D95E243B8C8700F8E3A2 /* HomeVC.swift in Sources */,
+				CE633A972440CED700E94566 /* LLSpinner.swift in Sources */,
 				CEE3EDE1243B8374006C1810 /* AppDelegate.swift in Sources */,
-				CE87A29B243F771200374B6C /* DB.swift in Sources */,
+				CE633A9B2440EFA000E94566 /* Util.swift in Sources */,
 				CE51CF0E243DF7090085D84E /* ApiService.swift in Sources */,
 				CE87A29D243F9A2700374B6C /* DbHelper.swift in Sources */,
 				CEE3EDE3243B8374006C1810 /* SceneDelegate.swift in Sources */,
