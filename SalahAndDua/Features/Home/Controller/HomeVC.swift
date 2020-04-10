@@ -31,7 +31,19 @@ class HomeVC: UIViewController {
             switch result {
             case .success(let response) :
                 if let calenders = try? decoder.decode(Calendar.self, from: response.data) {
-                    print(calenders.data[0].date.hijriData.date)
+                    //print(calenders)
+                    
+                    //DB.shared.insert(with: calenders.data[0])
+                
+                   // let db = DbHelper()
+                    //db.insert(with: calenders.data[0])
+                    
+                   //var calData =  db.getCalendarData(withDate: "01 Apr 2020")
+                   // print("This is from DB: \(calData?.date.readable)")
+                    
+                    
+                    print(DB.shared.getCalendarData(withDate: "01 Apr 2020"))
+                    
                 }
             case .failure(let error) :
                 print(error)

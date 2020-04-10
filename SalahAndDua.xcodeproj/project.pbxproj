@@ -106,8 +106,8 @@
 			children = (
 				CE87A295243F768800374B6C /* Shared */,
 				CE51CF0D243DF7090085D84E /* ApiService.swift */,
-				CEF7D95B243B8A7F00F8E3A2 /* App */,
 				CEE3EDF4243B847F006C1810 /* Features */,
+				CEF7D95B243B8A7F00F8E3A2 /* App */,
 				CEE3EDE9243B8376006C1810 /* Assets.xcassets */,
 				CEE3EDEB243B8376006C1810 /* LaunchScreen.storyboard */,
 				CEE3EDEE243B8376006C1810 /* Info.plist */,

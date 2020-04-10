@@ -10,8 +10,12 @@ import Foundation
 import SQLite3
 
 class DB {
+    // Singleton Instance
+    static var shared = DB()
+    
     private let dbPath = "mydb.sqlite"
-    static var db : OpaquePointer?
+    
+    private var op : OpaquePointer?
     
     private let calendarTableName = "calendar"
     
@@ -30,12 +34,11 @@ class DB {
     private let KEY_TODAY_DATE_HIJRI = "today_date_hijri"
     
     init() {
-        DB.db = openDatabase()
-        
-        
+        op = openDatabase()
+        createCalendarTable()
     }
     
-    func openDatabase() -> OpaquePointer?
+    private func openDatabase() -> OpaquePointer?
     {
         let fileURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
             .appendingPathComponent(dbPath)
@@ -53,7 +56,7 @@ class DB {
     func createCalendarTable() {
         let createTableString = """
         CREATE TABLE IF NOT EXISTS \(calendarTableName) (
-        \(KEY_ID) INTEGER PRIMARY KEY NOT NULL  AUTO_INCREMENT,
+        \(KEY_ID) INTEGER PRIMARY KEY AUTOINCREMENT,
         \(KEY_FAJR) TEXT,
         \(KEY_DHUHR) TEXT,
         \(KEY_ASR) TEXT,
@@ -69,7 +72,7 @@ class DB {
         """
         var createTableStatement: OpaquePointer? = nil
         
-        if sqlite3_prepare_v2(DB.db, createTableString, -1, &createTableStatement, nil) == SQLITE_OK
+        if sqlite3_prepare_v2(op, createTableString, -1, &createTableStatement, nil) == SQLITE_OK
         {
             if sqlite3_step(createTableStatement) == SQLITE_DONE
             {
@@ -106,7 +109,7 @@ class DB {
         
         var insertStatement: OpaquePointer?
         
-        if sqlite3_prepare_v2(DB.db, insertStatementString, -1, &insertStatement, nil) ==
+        if sqlite3_prepare_v2(op, insertStatementString, -1, &insertStatement, nil) ==
             SQLITE_OK {
             
             //let id: Int32 = 1
@@ -147,6 +150,56 @@ class DB {
         sqlite3_finalize(insertStatement)
     }
     
+    func getCalendarData(withDate date : String) -> CalendarData? {
+        var calendarData : CalendarData?
+        let queryStatementString = """
+        SELECT * FROM \(calendarTableName) where \(KEY_TODAY_DATE_ENGLISH) = '\(date)';
+        """
+        
+        var queryStatement: OpaquePointer?
+        
+        if sqlite3_prepare_v2(op, queryStatementString, -1, &queryStatement, nil) ==
+            SQLITE_OK {
+            
+            if sqlite3_step(queryStatement) == SQLITE_ROW {
+                
+                //let id = sqlite3_column_int(queryStatement, 0)
+                
+                let fajr = String(describing: String(cString: sqlite3_column_text(queryStatement, 1)))
+                let dhuhr = String(describing: String(cString: sqlite3_column_text(queryStatement, 2)))
+                let asr = String(describing: String(cString: sqlite3_column_text(queryStatement, 3)))
+                let maghrib = String(describing: String(cString: sqlite3_column_text(queryStatement, 4)))
+                let isha = String(describing: String(cString: sqlite3_column_text(queryStatement, 5)))
+                let sunrise = String(describing: String(cString: sqlite3_column_text(queryStatement, 6)))
+                let sunset = String(describing: String(cString: sqlite3_column_text(queryStatement, 7)))
+                let imask = String(describing: String(cString: sqlite3_column_text(queryStatement, 8)))
+                let midnight = String(describing: String(cString: sqlite3_column_text(queryStatement, 9)))
+                let todayDateEnglish = String(describing: String(cString: sqlite3_column_text(queryStatement, 10)))
+                let todayDateHijri = String(describing: String(cString: sqlite3_column_text(queryStatement, 11)))
+                
+                let timings = Timings(fajr: fajr, dhuhr: dhuhr, asr: asr, maghrib: maghrib, isha: isha, sunrise: sunrise, sunset: sunset, imask: imask, midnight: midnight)
+                
+                let dateData = DateData(readable: todayDateEnglish, hijriData: HijriData(date: todayDateHijri))
+                
+                calendarData = CalendarData(timings: timings, date: dateData)
+            } else {
+                print("\nQuery returned no results.")
+            }
+        } else {
+            // 6
+            let errorMessage = String(cString: sqlite3_errmsg(op))
+            print("\nQuery is not prepared \(errorMessage)")
+        }
+        // 7
+        sqlite3_finalize(queryStatement)
+        
+        return calendarData
+    }
+    
+    func query() {
+        
+    }
+    
     // Multiple row
     func insertMultiple() {
         let insertStatementString = """
@@ -173,7 +226,7 @@ class DB {
         // 1
         let names: [NSString] = ["Ray", "Chris", "Martha", "Danielle"]
         if sqlite3_prepare_v2(
-            DB.db,
+            op,
             insertStatementString,
             -1,
             &insertStatement,
@@ -202,42 +255,42 @@ class DB {
     
     // TODO change
     func update() {
-      let updateStatementString = "UPDATE Contact SET Name = 'Adam' WHERE Id = 1;"
-
+        let updateStatementString = "UPDATE Contact SET Name = 'Adam' WHERE Id = 1;"
+        
         var updateStatement: OpaquePointer?
-        if sqlite3_prepare_v2(DB.db, updateStatementString, -1, &updateStatement, nil) ==
-          SQLITE_OK {
-        if sqlite3_step(updateStatement) == SQLITE_DONE {
-          print("\nSuccessfully updated row.")
+        if sqlite3_prepare_v2(op, updateStatementString, -1, &updateStatement, nil) ==
+            SQLITE_OK {
+            if sqlite3_step(updateStatement) == SQLITE_DONE {
+                print("\nSuccessfully updated row.")
+            } else {
+                print("\nCould not update row.")
+            }
         } else {
-          print("\nCould not update row.")
+            print("\nUPDATE statement is not prepared")
         }
-      } else {
-        print("\nUPDATE statement is not prepared")
-      }
-      sqlite3_finalize(updateStatement)
+        sqlite3_finalize(updateStatement)
     }
     
     // TODO Change
     func delete() {
         let deleteStatementString = "DELETE FROM Contact WHERE Id = 1;"
         
-      var deleteStatement: OpaquePointer?
-        if sqlite3_prepare_v2(DB.db, deleteStatementString, -1, &deleteStatement, nil) ==
-          SQLITE_OK {
-        if sqlite3_step(deleteStatement) == SQLITE_DONE {
-          print("\nSuccessfully deleted row.")
+        var deleteStatement: OpaquePointer?
+        if sqlite3_prepare_v2(op, deleteStatementString, -1, &deleteStatement, nil) ==
+            SQLITE_OK {
+            if sqlite3_step(deleteStatement) == SQLITE_DONE {
+                print("\nSuccessfully deleted row.")
+            } else {
+                print("\nCould not delete row.")
+            }
         } else {
-          print("\nCould not delete row.")
+            print("\nDELETE statement could not be prepared")
         }
-      } else {
-        print("\nDELETE statement could not be prepared")
-      }
-      
-      sqlite3_finalize(deleteStatement)
+        
+        sqlite3_finalize(deleteStatement)
     }
     
-    static func closeDB() {
-        sqlite3_close(DB.db)
+    func closeDB() {
+        sqlite3_close(op)
     }
 }

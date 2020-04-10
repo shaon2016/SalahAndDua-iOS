@@ -10,6 +10,7 @@ import Foundation
 import SQLite
 
 class DbHelper {
+    
     private let dbPath = "mydb.sqlite"
     
     private let calenderTable = Table("Calendar")
@@ -28,7 +29,12 @@ class DbHelper {
     let todayDateEnglish = Expression<String>("today_date_english")
     let todayDateHijri = Expression<String>("today_date_hijri")
     
-    static var db : Connection?
+    private var connection : Connection?
+    
+    init() {
+        openDb()
+        createCalendarTable()
+    }
     
     func openDb()   {
         let path = NSSearchPathForDirectoriesInDomains(
@@ -36,7 +42,7 @@ class DbHelper {
         ).first!
         
         do {
-            DbHelper.db = try Connection("\(path)/db.sqlite3")
+            connection = try Connection("\(path)/db.sqlite3")
         } catch {
             print(error)
         }
@@ -46,7 +52,7 @@ class DbHelper {
     func createCalendarTable() {
         
         do {
-            try DbHelper.db?.run(calenderTable.create { t in
+            try connection?.run(calenderTable.create { t in
                 t.column(id, primaryKey: .autoincrement)
                 t.column(fajr)
                 t.column(dhuhr)
@@ -70,7 +76,7 @@ class DbHelper {
     
     func insert(with calendarData : CalendarData) {
         do {
-            try DbHelper.db?.run(calenderTable.insert(
+            try connection?.run(calenderTable.insert(
                 fajr <- calendarData.timings.fajr,
                 dhuhr <- calendarData.timings.dhuhr,
                 asr <- calendarData.timings.asr,
@@ -90,11 +96,11 @@ class DbHelper {
         }
     }
     
-    func getCalendarData(with date : String) -> CalendarData? {
+    func getCalendarData(withDate date : String) -> CalendarData? {
         var calendarData : CalendarData?
         do {
             let query = calenderTable.filter(todayDateEnglish == date)
-            for calendar in try (DbHelper.db?.prepare(query))!  {
+            for calendar in try (connection?.prepare(query))!  {
                 
                 let timings = Timings(fajr: calendar[fajr], dhuhr: calendar[dhuhr], asr: calendar[asr], maghrib: calendar[magrib], isha: calendar[isha], sunrise: calendar[sunrise], sunset: calendar[sunset], imask: calendar[imask], midnight: calendar[midnight])
                 
@@ -113,7 +119,7 @@ class DbHelper {
     
     func deleteCalendarTable() {
         do {
-            try DbHelper.db?.run(calenderTable.delete())
+            try connection?.run(calenderTable.delete())
         } catch let Result.error(message, code, statement) where code == SQLITE_CONSTRAINT {
             print("constraint failed: \(message), in \(String(describing: statement))")
         } catch let error {
