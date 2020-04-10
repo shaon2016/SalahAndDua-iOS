@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C8EB9378B68BE8F087A91E09 /* Pods_SalahAndDua.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D76F24636B3ED7F3059EC42F /* Pods_SalahAndDua.framework */; };
+		CE441771244127B700B2E378 /* Extension+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE441770244127B700B2E378 /* Extension+Util.swift */; };
 		CE51CF0E243DF7090085D84E /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE51CF0D243DF7090085D84E /* ApiService.swift */; };
 		CE633A972440CED700E94566 /* LLSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE633A962440CED700E94566 /* LLSpinner.swift */; };
 		CE633A9B2440EFA000E94566 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE633A9A2440EFA000E94566 /* Util.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE441770244127B700B2E378 /* Extension+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Util.swift"; sourceTree = "<group>"; };
 		CE51CF0D243DF7090085D84E /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		CE633A962440CED700E94566 /* LLSpinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLSpinner.swift; sourceTree = "<group>"; };
 		CE633A9A2440EFA000E94566 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
@@ -60,9 +62,18 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		CE44176C2441266900B2E378 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CE441770244127B700B2E378 /* Extension+Util.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		CE87A295243F768800374B6C /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				CE44176C2441266900B2E378 /* Extensions */,
 				CE1E96632440C5FA00858C97 /* Data */,
 				CE87A299243F76EC00374B6C /* Library */,
 				CE87A298243F76E700374B6C /* Constant */,
@@ -317,6 +328,7 @@
 				CE87A29D243F9A2700374B6C /* DbHelper.swift in Sources */,
 				CEE3EDE3243B8374006C1810 /* SceneDelegate.swift in Sources */,
 				CE6A061A243E318C0059E8DC /* Calendar.swift in Sources */,
+				CE441771244127B700B2E378 /* Extension+Util.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

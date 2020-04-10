@@ -110,7 +110,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="pgY-yk-pXc" userLabel="Sunrise Stack View">
                                         <rect key="frame" x="207" y="0.0" width="207" height="45"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunrise" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gnb-DG-Se0">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunset" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gnb-DG-Se0">
                                                 <rect key="frame" x="0.0" y="0.0" width="207" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -264,6 +264,20 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zPf-zU-NGM"/>
                     </view>
+                    <connections>
+                        <outlet property="asrLabel" destination="096-nq-oLb" id="sAK-E8-xos"/>
+                        <outlet property="dhuhrLabel" destination="ehn-0Q-vlj" id="4SU-Vu-LhZ"/>
+                        <outlet property="fajrLabel" destination="PmE-YG-HxK" id="SNc-Pu-Sqt"/>
+                        <outlet property="iftarLabel" destination="XmY-PE-NAR" id="eUf-49-SM7"/>
+                        <outlet property="ishaLabel" destination="cze-Pm-PKH" id="079-ws-A0H"/>
+                        <outlet property="maghribLabel" destination="OwT-eA-yAS" id="TDq-gd-ibd"/>
+                        <outlet property="nowTimeLabel" destination="EUI-vN-7HZ" id="fhD-Ik-pA0"/>
+                        <outlet property="sahriLabel" destination="scP-Y9-xL3" id="bUg-WD-aR0"/>
+                        <outlet property="sunriseLabel" destination="1WK-Ng-nYP" id="PLd-MH-B5m"/>
+                        <outlet property="sunsetLabel" destination="ORa-JP-iT9" id="8qv-Vq-0Jv"/>
+                        <outlet property="todayDateEnglishLabel" destination="HDc-Cv-4zj" id="l1e-OG-i1J"/>
+                        <outlet property="todayDateHijriLabel" destination="bQH-n7-c0D" id="XQb-iM-p4t"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uYN-4V-fnF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" id="FWg-dl-uXi">
