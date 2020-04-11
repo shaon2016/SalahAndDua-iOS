@@ -27,11 +27,16 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // If there is no data in db
+        // get data from server
+        if DbHelper.shared.getCalendarData(withDate: Util.formattedTodayDate(withFormatter: "dd MMM yyyy")) == nil {
+            getSalahCalendarData()
+        } else {
+            showCalendarData()
+        }
         
-        getSalahCalendarData()
         
         
-        showCalendarData()
     }
     
     func getSalahCalendarData()  {
@@ -45,8 +50,6 @@ class HomeVC: UIViewController {
         {
             //[weak self]
             (result) in
-            
-            LLSpinner.stop()
             
             //            guard let strongSelf = self else {
             //                return
@@ -63,12 +66,17 @@ class HomeVC: UIViewController {
                             for cal in calender.data {
                                 DbHelper.shared.insert(with: cal)
                             }
+                            
+                            DispatchQueue.main.async {
+                                LLSpinner.stop()
+                                self.showCalendarData()
+                            }
                         }
                     }
                     
                 }
             case .failure(let error) :
-                
+                LLSpinner.stop()
                 print(error)
             }
         }
@@ -83,15 +91,15 @@ class HomeVC: UIViewController {
             DispatchQueue.main.async {
                 self.todayDateEnglishLabel.text = "Today: \(String(describing: calData?.date.readable ?? ""))"
                 self.todayDateHijriLabel.text = "Hijri: \(String(describing: calData?.date.hijriData.date ?? ""))"
-                self.fajrLabel.text = calData?.timings.fajr
-                self.dhuhrLabel.text = calData?.timings.dhuhr
-                self.asrLabel.text = calData?.timings.asr
-                self.maghribLabel.text = calData?.timings.maghrib
-                self.ishaLabel.text = calData?.timings.isha
-                self.sunriseLabel.text = calData?.timings.sunrise
-                self.sunsetLabel.text = calData?.timings.sunset
-                self.iftarLabel.text = calData?.timings.maghrib
-                self.sahriLabel.text = calData?.timings.imask
+                self.fajrLabel.text = calData?.timings.fajr.deletingSuffix("(+06)")
+                self.dhuhrLabel.text = calData?.timings.dhuhr.deletingSuffix("(+06)")
+                self.asrLabel.text = calData?.timings.asr.deletingSuffix("(+06)")
+                self.maghribLabel.text = calData?.timings.maghrib.deletingSuffix("(+06)")
+                self.ishaLabel.text = calData?.timings.isha.deletingSuffix("(+06)")
+                self.sunriseLabel.text = calData?.timings.sunrise.deletingSuffix("(+06)")
+                self.sunsetLabel.text = calData?.timings.sunset.deletingSuffix("(+06)")
+                self.iftarLabel.text = calData?.timings.maghrib.deletingSuffix("(+06)")
+                self.sahriLabel.text = calData?.timings.imask.deletingSuffix("(+06)")
                 
                 let date = Date()
                 self.nowTimeLabel.text = "\(date.hour) : \(date.minute)"
@@ -110,4 +118,11 @@ class HomeVC: UIViewController {
     
     
     
+}
+
+extension String {
+    func deletingSuffix(_ suffix: String) -> String {
+        guard self.hasSuffix(suffix) else { return self }
+        return String(self.dropLast(suffix.count))
+    }
 }

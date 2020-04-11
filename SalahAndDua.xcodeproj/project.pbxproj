@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C8EB9378B68BE8F087A91E09 /* Pods_SalahAndDua.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D76F24636B3ED7F3059EC42F /* Pods_SalahAndDua.framework */; };
 		CE441771244127B700B2E378 /* Extension+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE441770244127B700B2E378 /* Extension+Util.swift */; };
+		CE4DEC4624420669000E517E /* MyUserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4DEC4524420669000E517E /* MyUserDefault.swift */; };
 		CE51CF0E243DF7090085D84E /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE51CF0D243DF7090085D84E /* ApiService.swift */; };
 		CE633A972440CED700E94566 /* LLSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE633A962440CED700E94566 /* LLSpinner.swift */; };
 		CE633A9B2440EFA000E94566 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE633A9A2440EFA000E94566 /* Util.swift */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		CE441770244127B700B2E378 /* Extension+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Util.swift"; sourceTree = "<group>"; };
+		CE4DEC4524420669000E517E /* MyUserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUserDefault.swift; sourceTree = "<group>"; };
 		CE51CF0D243DF7090085D84E /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		CE633A962440CED700E94566 /* LLSpinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLSpinner.swift; sourceTree = "<group>"; };
 		CE633A9A2440EFA000E94566 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				CE87A29C243F9A2700374B6C /* DbHelper.swift */,
+				CE4DEC4524420669000E517E /* MyUserDefault.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				CE633A9B2440EFA000E94566 /* Util.swift in Sources */,
 				CE51CF0E243DF7090085D84E /* ApiService.swift in Sources */,
 				CE87A29D243F9A2700374B6C /* DbHelper.swift in Sources */,
+				CE4DEC4624420669000E517E /* MyUserDefault.swift in Sources */,
 				CEE3EDE3243B8374006C1810 /* SceneDelegate.swift in Sources */,
 				CE6A061A243E318C0059E8DC /* Calendar.swift in Sources */,
 				CE441771244127B700B2E378 /* Extension+Util.swift in Sources */,
