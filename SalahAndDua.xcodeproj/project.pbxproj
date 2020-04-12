@@ -14,11 +14,15 @@
 		CE633A972440CED700E94566 /* LLSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE633A962440CED700E94566 /* LLSpinner.swift */; };
 		CE633A9B2440EFA000E94566 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE633A9A2440EFA000E94566 /* Util.swift */; };
 		CE6A061A243E318C0059E8DC /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A0619243E318C0059E8DC /* Calendar.swift */; };
+		CE7F49A724437B5F00850489 /* FormatTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7F49A624437B5F00850489 /* FormatTabController.swift */; };
 		CE87A29D243F9A2700374B6C /* DbHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE87A29C243F9A2700374B6C /* DbHelper.swift */; };
 		CEE3EDE1243B8374006C1810 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE3EDE0243B8374006C1810 /* AppDelegate.swift */; };
 		CEE3EDE3243B8374006C1810 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE3EDE2243B8374006C1810 /* SceneDelegate.swift */; };
 		CEE3EDEA243B8376006C1810 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE3EDE9243B8376006C1810 /* Assets.xcassets */; };
 		CEE3EDED243B8376006C1810 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEE3EDEB243B8376006C1810 /* LaunchScreen.storyboard */; };
+		CEE9D01124434A5F00641291 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9D01024434A5F00641291 /* LocationService.swift */; };
+		CEE9D01724434D1200641291 /* Location.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEE9D01624434D1200641291 /* Location.storyboard */; };
+		CEE9D01924434D2F00641291 /* LocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9D01824434D2F00641291 /* LocationVC.swift */; };
 		CEF7D95E243B8C8700F8E3A2 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF7D95D243B8C8700F8E3A2 /* HomeVC.swift */; };
 		CEF7D960243B8D0900F8E3A2 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF7D95F243B8D0900F8E3A2 /* Home.storyboard */; };
 /* End PBXBuildFile section */
@@ -30,6 +34,7 @@
 		CE633A962440CED700E94566 /* LLSpinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLSpinner.swift; sourceTree = "<group>"; };
 		CE633A9A2440EFA000E94566 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		CE6A0619243E318C0059E8DC /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
+		CE7F49A624437B5F00850489 /* FormatTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatTabController.swift; sourceTree = "<group>"; };
 		CE87A29C243F9A2700374B6C /* DbHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DbHelper.swift; sourceTree = "<group>"; };
 		CEE3EDDD243B8374006C1810 /* SalahAndDua.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SalahAndDua.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEE3EDE0243B8374006C1810 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +42,9 @@
 		CEE3EDE9243B8376006C1810 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEE3EDEC243B8376006C1810 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEE3EDEE243B8376006C1810 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEE9D01024434A5F00641291 /* LocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		CEE9D01624434D1200641291 /* Location.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Location.storyboard; sourceTree = "<group>"; };
+		CEE9D01824434D2F00641291 /* LocationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationVC.swift; sourceTree = "<group>"; };
 		CEF7D95D243B8C8700F8E3A2 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		CEF7D95F243B8D0900F8E3A2 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		D28ABE3F007FE95A2296E4C7 /* Pods-SalahAndDua.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SalahAndDua.release.xcconfig"; path = "Target Support Files/Pods-SalahAndDua/Pods-SalahAndDua.release.xcconfig"; sourceTree = "<group>"; };
@@ -88,6 +96,7 @@
 		CE87A296243F76B000374B6C /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				CEE9D01024434A5F00641291 /* LocationService.swift */,
 				CE633A9A2440EFA000E94566 /* Util.swift */,
 			);
 			path = Helper;
@@ -143,9 +152,44 @@
 		CEE3EDF4243B847F006C1810 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				CEE9D01224434CD200641291 /* LocationPermission */,
 				CEF7D958243B89C300F8E3A2 /* Home */,
+				CE7F49A624437B5F00850489 /* FormatTabController.swift */,
 			);
 			path = Features;
+			sourceTree = "<group>";
+		};
+		CEE9D01224434CD200641291 /* LocationPermission */ = {
+			isa = PBXGroup;
+			children = (
+				CEE9D01524434CF700641291 /* Controller */,
+				CEE9D01424434CEB00641291 /* View */,
+				CEE9D01324434CE400641291 /* Model */,
+			);
+			path = LocationPermission;
+			sourceTree = "<group>";
+		};
+		CEE9D01324434CE400641291 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CEE9D01424434CEB00641291 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CEE9D01624434D1200641291 /* Location.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CEE9D01524434CF700641291 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CEE9D01824434D2F00641291 /* LocationVC.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		CEF7D958243B89C300F8E3A2 /* Home */ = {
@@ -271,6 +315,7 @@
 				CEF7D960243B8D0900F8E3A2 /* Home.storyboard in Resources */,
 				CEE3EDED243B8376006C1810 /* LaunchScreen.storyboard in Resources */,
 				CEE3EDEA243B8376006C1810 /* Assets.xcassets in Resources */,
+				CEE9D01724434D1200641291 /* Location.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,7 +373,10 @@
 				CEE3EDE1243B8374006C1810 /* AppDelegate.swift in Sources */,
 				CE633A9B2440EFA000E94566 /* Util.swift in Sources */,
 				CE51CF0E243DF7090085D84E /* ApiService.swift in Sources */,
+				CEE9D01924434D2F00641291 /* LocationVC.swift in Sources */,
 				CE87A29D243F9A2700374B6C /* DbHelper.swift in Sources */,
+				CE7F49A724437B5F00850489 /* FormatTabController.swift in Sources */,
+				CEE9D01124434A5F00641291 /* LocationService.swift in Sources */,
 				CE4DEC4624420669000E517E /* MyUserDefault.swift in Sources */,
 				CEE3EDE3243B8374006C1810 /* SceneDelegate.swift in Sources */,
 				CE6A061A243E318C0059E8DC /* Calendar.swift in Sources */,

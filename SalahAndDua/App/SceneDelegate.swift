@@ -11,56 +11,31 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
+    var locationService = LocationService()
     
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        let tabBarController = UITabBarController()
+        let tabBarController = FormatTabController.instance.getFormattedTabController(withTabController: UITabBarController())
         
-        let homeStoryboard = UIStoryboard(name: "Home", bundle: nil)
-        let homeVC = homeStoryboard.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
+        let locStoryboard = UIStoryboard(name: "Location", bundle: nil)
         
-        let vcData : [(UIViewController, UIImage, UIImage)] = [
-         (homeVC, UIImage(named: "home_tab_icon")!, UIImage(named: "home_selected_tab_icon")!)
-        ]
-        
-        let vcs = vcData.map { (vc, defaultImage, selectedImage) -> UINavigationController in
-          
-            let nav = UINavigationController(rootViewController: vc)
-            nav.tabBarItem.image = defaultImage
-            nav.tabBarItem.selectedImage = selectedImage
-            
-            return nav
-        }
-        
-        tabBarController.viewControllers = vcs
-        tabBarController.tabBar.isTranslucent = false
-       // tabBarController.tabBar.barTintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        
-        if let items = tabBarController.tabBar.items {
-            
-            for item in items {
-                if let image = item.image {
-                    item.image = image.withRenderingMode(.alwaysOriginal)
-                }
-                
-                if let selectedImage = item.selectedImage {
-                    item.selectedImage = selectedImage.withRenderingMode(.alwaysOriginal)
-                }
-                
-                item.imageInsets = UIEdgeInsets(top: 6, left: 0, bottom: -6, right: 0)
-            }
-        }
-        
-//        UINavigationBar.appearance().backgroundColor = .black
+        let locVC = locStoryboard.instantiateViewController(withIdentifier: "LocVC") as! LocationVC
+         
+        //        UINavigationBar.appearance().backgroundColor = .black
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = tabBarController
+       
+        switch locationService.status {
+        case .notDetermined, .denied, .restricted:
+            window?.rootViewController = locVC
+        default:
+            window?.rootViewController = tabBarController
+        }
+        
         window?.makeKeyAndVisible()
-        
-        
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {
