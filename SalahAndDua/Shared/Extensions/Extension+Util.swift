@@ -15,7 +15,6 @@ extension Date {
         let hour = calendar.component(.hour, from: date)
         
         return hour
-        // let minutes = calendar.component(.minute, from: date)
     }
     
     var minute : Int {
@@ -25,4 +24,13 @@ extension Date {
         
         return m
     }
+    
+    
+    var dayofTheWeek: String {
+        let dayNumber = NSCalendar.current.component(.weekday, from: self)
+        // day number starts from 1 but array count from 0
+        return ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"][dayNumber - 1]
+    }
+    
+    
 }

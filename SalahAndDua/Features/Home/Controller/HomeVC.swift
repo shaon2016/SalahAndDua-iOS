@@ -11,9 +11,12 @@ import Moya
 
 
 class HomeVC: UIViewController {
+    private var timer : Timer?
+    
     @IBOutlet weak var todayDateEnglishLabel: UILabel!
     @IBOutlet weak var todayDateHijriLabel: UILabel!
     @IBOutlet weak var nowTimeLabel: UILabel!
+    @IBOutlet weak var todayLabel: UILabel!
     @IBOutlet weak var sunriseLabel: UILabel!
     @IBOutlet weak var sunsetLabel: UILabel!
     @IBOutlet weak var sahriLabel: UILabel!
@@ -35,8 +38,14 @@ class HomeVC: UIViewController {
             showCalendarData()
         }
         
+        timer = Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(updateClockTime), userInfo: nil, repeats: true)
+    }
+    
+    @objc func updateClockTime()  {
+        let date = Date()
         
-        
+        self.nowTimeLabel.text = "\(date.hour) : \(date.minute)"
+            print("TImer called")
     }
     
     func getSalahCalendarData()  {
@@ -102,7 +111,9 @@ class HomeVC: UIViewController {
                 self.sahriLabel.text = calData?.timings.imask.deletingSuffix("(+06)")
                 
                 let date = Date()
+             
                 self.nowTimeLabel.text = "\(date.hour) : \(date.minute)"
+                self.todayLabel.text = date.dayofTheWeek
             }
             
             
@@ -116,7 +127,11 @@ class HomeVC: UIViewController {
     }
     
     
-    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        timer?.invalidate()
+    }
     
 }
 
