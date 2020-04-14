@@ -16,6 +16,10 @@
 		CE6A061A243E318C0059E8DC /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A0619243E318C0059E8DC /* Calendar.swift */; };
 		CE7F49A724437B5F00850489 /* FormatTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7F49A624437B5F00850489 /* FormatTabController.swift */; };
 		CE87A29D243F9A2700374B6C /* DbHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE87A29C243F9A2700374B6C /* DbHelper.swift */; };
+		CE8F2C282445F4CF00927C6A /* Dua.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE8F2C272445F4CF00927C6A /* Dua.storyboard */; };
+		CE8F2C2A2445FC4900927C6A /* DuaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F2C292445FC4900927C6A /* DuaVC.swift */; };
+		CE8F2C2C24462F0000927C6A /* DuaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F2C2B24462F0000927C6A /* DuaTableViewCell.swift */; };
+		CE8F2C2E2446317600927C6A /* Dua.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F2C2D2446317600927C6A /* Dua.swift */; };
 		CEE3EDE1243B8374006C1810 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE3EDE0243B8374006C1810 /* AppDelegate.swift */; };
 		CEE3EDE3243B8374006C1810 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE3EDE2243B8374006C1810 /* SceneDelegate.swift */; };
 		CEE3EDEA243B8376006C1810 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE3EDE9243B8376006C1810 /* Assets.xcassets */; };
@@ -36,6 +40,10 @@
 		CE6A0619243E318C0059E8DC /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
 		CE7F49A624437B5F00850489 /* FormatTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatTabController.swift; sourceTree = "<group>"; };
 		CE87A29C243F9A2700374B6C /* DbHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DbHelper.swift; sourceTree = "<group>"; };
+		CE8F2C272445F4CF00927C6A /* Dua.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dua.storyboard; sourceTree = "<group>"; };
+		CE8F2C292445FC4900927C6A /* DuaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuaVC.swift; sourceTree = "<group>"; };
+		CE8F2C2B24462F0000927C6A /* DuaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuaTableViewCell.swift; sourceTree = "<group>"; };
+		CE8F2C2D2446317600927C6A /* Dua.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dua.swift; sourceTree = "<group>"; };
 		CEE3EDDD243B8374006C1810 /* SalahAndDua.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SalahAndDua.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEE3EDE0243B8374006C1810 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEE3EDE2243B8374006C1810 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +125,41 @@
 			path = Library;
 			sourceTree = "<group>";
 		};
+		CE8F2C232445F46600927C6A /* Dua */ = {
+			isa = PBXGroup;
+			children = (
+				CE8F2C262445F49600927C6A /* Model */,
+				CE8F2C242445F47400927C6A /* View */,
+				CE8F2C252445F49000927C6A /* Controller */,
+			);
+			path = Dua;
+			sourceTree = "<group>";
+		};
+		CE8F2C242445F47400927C6A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CE8F2C272445F4CF00927C6A /* Dua.storyboard */,
+				CE8F2C2B24462F0000927C6A /* DuaTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CE8F2C252445F49000927C6A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CE8F2C292445FC4900927C6A /* DuaVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CE8F2C262445F49600927C6A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CE8F2C2D2446317600927C6A /* Dua.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		CEE3EDD4243B8374006C1810 = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +195,7 @@
 		CEE3EDF4243B847F006C1810 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				CE8F2C232445F46600927C6A /* Dua */,
 				CEE9D01224434CD200641291 /* LocationPermission */,
 				CEF7D958243B89C300F8E3A2 /* Home */,
 				CE7F49A624437B5F00850489 /* FormatTabController.swift */,
@@ -162,9 +206,9 @@
 		CEE9D01224434CD200641291 /* LocationPermission */ = {
 			isa = PBXGroup;
 			children = (
-				CEE9D01524434CF700641291 /* Controller */,
-				CEE9D01424434CEB00641291 /* View */,
 				CEE9D01324434CE400641291 /* Model */,
+				CEE9D01424434CEB00641291 /* View */,
+				CEE9D01524434CF700641291 /* Controller */,
 			);
 			path = LocationPermission;
 			sourceTree = "<group>";
@@ -195,9 +239,9 @@
 		CEF7D958243B89C300F8E3A2 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				CEF7D95C243B8C1F00F8E3A2 /* Controller */,
 				CEF7D95A243B89D300F8E3A2 /* Model */,
 				CEF7D959243B89CC00F8E3A2 /* View */,
+				CEF7D95C243B8C1F00F8E3A2 /* Controller */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -315,6 +359,7 @@
 				CEF7D960243B8D0900F8E3A2 /* Home.storyboard in Resources */,
 				CEE3EDED243B8376006C1810 /* LaunchScreen.storyboard in Resources */,
 				CEE3EDEA243B8376006C1810 /* Assets.xcassets in Resources */,
+				CE8F2C282445F4CF00927C6A /* Dua.storyboard in Resources */,
 				CEE9D01724434D1200641291 /* Location.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -371,6 +416,7 @@
 				CEF7D95E243B8C8700F8E3A2 /* HomeVC.swift in Sources */,
 				CE633A972440CED700E94566 /* LLSpinner.swift in Sources */,
 				CEE3EDE1243B8374006C1810 /* AppDelegate.swift in Sources */,
+				CE8F2C2A2445FC4900927C6A /* DuaVC.swift in Sources */,
 				CE633A9B2440EFA000E94566 /* Util.swift in Sources */,
 				CE51CF0E243DF7090085D84E /* ApiService.swift in Sources */,
 				CEE9D01924434D2F00641291 /* LocationVC.swift in Sources */,
@@ -379,7 +425,9 @@
 				CEE9D01124434A5F00641291 /* LocationService.swift in Sources */,
 				CE4DEC4624420669000E517E /* MyUserDefault.swift in Sources */,
 				CEE3EDE3243B8374006C1810 /* SceneDelegate.swift in Sources */,
+				CE8F2C2C24462F0000927C6A /* DuaTableViewCell.swift in Sources */,
 				CE6A061A243E318C0059E8DC /* Calendar.swift in Sources */,
+				CE8F2C2E2446317600927C6A /* Dua.swift in Sources */,
 				CE441771244127B700B2E378 /* Extension+Util.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

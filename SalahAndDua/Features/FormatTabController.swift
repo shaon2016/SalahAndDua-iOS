@@ -18,11 +18,17 @@ class FormatTabController {
     func getFormattedTabController(withTabController tabBarController : UITabBarController) -> UITabBarController {
         
         let homeStoryboard = UIStoryboard(name: "Home", bundle: nil)
+        let duaStoryboard = UIStoryboard(name: "Dua", bundle: nil)
         
         let homeVC = homeStoryboard.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
+         let duaVC = duaStoryboard.instantiateViewController(withIdentifier: "DuaVC") as! DuaVC
 
         let vcData : [(UIViewController, UIImage, UIImage)] = [
-                   (homeVC, UIImage(named: "home_tab_icon")!, UIImage(named: "home_selected_tab_icon")!)
+                   (homeVC, UIImage(named: "home_tab_icon")!, UIImage(named: "home_selected_tab_icon")!),
+                   
+                   (duaVC, UIImage(named: "dua_tab_icon")!, UIImage(named: "dua_selected_tab_icon")!),
+                   
+                   
                ]
                
                let vcs = vcData.map { (vc, defaultImage, selectedImage) -> UINavigationController in
