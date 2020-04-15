@@ -15,8 +15,17 @@ class DuaVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setTitle()
+        
+        
         tableView.tableFooterView = .none
     }
+    
+    private func setTitle() {
+           title = "Dua"
+           let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+           navigationController?.navigationBar.titleTextAttributes = textAttributes
+       }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return duas.count
@@ -28,6 +37,17 @@ class DuaVC: UITableViewController {
         cell.duaLabel.text = duas[indexPath.row].title
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        performSegue(withIdentifier: "DuaDetailsSegue", sender: duas[indexPath.row])
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! DuaDetailsVC
+        
+        destinationVC.duaDetail = sender as? DuaDetail
     }
     
     

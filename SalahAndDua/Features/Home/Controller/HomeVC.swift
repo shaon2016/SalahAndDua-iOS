@@ -30,6 +30,8 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setTitle()
+        
         // If there is no data in db
         // get data from server
         if DbHelper.shared.getCalendarData(withDate: Util.formattedTodayDate(withFormatter: "dd MMM yyyy")) == nil {
@@ -45,7 +47,7 @@ class HomeVC: UIViewController {
         let date = Date()
         
         self.nowTimeLabel.text = "\(date.hour) : \(date.minute)"
-            print("TImer called")
+        print("TImer called")
     }
     
     func getSalahCalendarData()  {
@@ -111,7 +113,7 @@ class HomeVC: UIViewController {
                 self.sahriLabel.text = calData?.timings.imask.deletingSuffix("(+06)")
                 
                 let date = Date()
-             
+                
                 self.nowTimeLabel.text = "\(date.hour) : \(date.minute)"
                 self.todayLabel.text = date.dayofTheWeek
             }
@@ -120,19 +122,17 @@ class HomeVC: UIViewController {
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        navigationController?.navigationBar.barTintColor = .gray
-    }
-    
-    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         timer?.invalidate()
     }
     
+    private func setTitle() {
+        title = "Home"
+        let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
+    }
 }
 
 extension String {

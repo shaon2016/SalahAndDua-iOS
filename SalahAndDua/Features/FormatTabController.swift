@@ -36,17 +36,23 @@ class FormatTabController {
                    let nav = UINavigationController(rootViewController: vc)
                    nav.tabBarItem.image = defaultImage
                    nav.tabBarItem.selectedImage = selectedImage
-                   
+                
+             
+                nav.navigationBar.barTintColor = .gray
+                
                    return nav
                }
                
                tabBarController.viewControllers = vcs
                tabBarController.tabBar.isTranslucent = false
                // tabBarController.tabBar.barTintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-               
+            
                if let items = tabBarController.tabBar.items {
-                   
+                
+            
+                
                    for item in items {
+                    
                        if let image = item.image {
                            item.image = image.withRenderingMode(.alwaysOriginal)
                        }

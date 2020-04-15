@@ -20,6 +20,7 @@
 		CE8F2C2A2445FC4900927C6A /* DuaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F2C292445FC4900927C6A /* DuaVC.swift */; };
 		CE8F2C2C24462F0000927C6A /* DuaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F2C2B24462F0000927C6A /* DuaTableViewCell.swift */; };
 		CE8F2C2E2446317600927C6A /* Dua.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F2C2D2446317600927C6A /* Dua.swift */; };
+		CEB8382824472B8200CED038 /* DuaDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB8382724472B8200CED038 /* DuaDetailsVC.swift */; };
 		CEE3EDE1243B8374006C1810 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE3EDE0243B8374006C1810 /* AppDelegate.swift */; };
 		CEE3EDE3243B8374006C1810 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE3EDE2243B8374006C1810 /* SceneDelegate.swift */; };
 		CEE3EDEA243B8376006C1810 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE3EDE9243B8376006C1810 /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 		CE8F2C292445FC4900927C6A /* DuaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuaVC.swift; sourceTree = "<group>"; };
 		CE8F2C2B24462F0000927C6A /* DuaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuaTableViewCell.swift; sourceTree = "<group>"; };
 		CE8F2C2D2446317600927C6A /* Dua.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dua.swift; sourceTree = "<group>"; };
+		CEB8382724472B8200CED038 /* DuaDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuaDetailsVC.swift; sourceTree = "<group>"; };
 		CEE3EDDD243B8374006C1810 /* SalahAndDua.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SalahAndDua.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEE3EDE0243B8374006C1810 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEE3EDE2243B8374006C1810 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				CE8F2C292445FC4900927C6A /* DuaVC.swift */,
+				CEB8382724472B8200CED038 /* DuaDetailsVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -414,6 +417,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEF7D95E243B8C8700F8E3A2 /* HomeVC.swift in Sources */,
+				CEB8382824472B8200CED038 /* DuaDetailsVC.swift in Sources */,
 				CE633A972440CED700E94566 /* LLSpinner.swift in Sources */,
 				CEE3EDE1243B8374006C1810 /* AppDelegate.swift in Sources */,
 				CE8F2C2A2445FC4900927C6A /* DuaVC.swift in Sources */,

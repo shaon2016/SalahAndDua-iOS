@@ -2,7 +2,8 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sIH-kR-i6u">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15705"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -46,10 +47,156 @@
                             <outlet property="delegate" destination="sIH-kR-i6u" id="lri-DY-ULQ"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="YN7-wi-KkF" kind="showDetail" identifier="DuaDetailsSegue" id="avr-Gp-Ltf"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HSk-0d-5PQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="10.144927536231885" y="-45.535714285714285"/>
+        </scene>
+        <!--Dua DetailsVC-->
+        <scene sceneID="Hni-nh-bXk">
+            <objects>
+                <viewController id="YN7-wi-KkF" customClass="DuaDetailsVC" customModule="SalahAndDua" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TSI-D1-jkJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NBr-zb-evA">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="822"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Il2-mA-Po4">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1474"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem Ipsum is simply dummy text of the printing and typesetting " textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JHa-Xc-KlG">
+                                                <rect key="frame" x="20" y="20" width="374" height="107.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uZz-ne-24R">
+                                                <rect key="frame" x="20" y="147" width="374" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reference" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z5x-D0-Zan">
+                                                <rect key="frame" x="20" y="186.5" width="374" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YrC-bf-YZi">
+                                                <rect key="frame" x="20" y="218.5" width="374" height="264"/>
+                                                <mutableString key="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</mutableString>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pronunciation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yj7-3S-ImB">
+                                                <rect key="frame" x="20" y="497" width="374" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S0w-w3-0Ql">
+                                                <rect key="frame" x="20" y="529" width="374" height="264"/>
+                                                <mutableString key="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</mutableString>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Translation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KUY-MG-RYt">
+                                                <rect key="frame" x="20" y="818" width="374" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C0s-GT-QMF">
+                                                <rect key="frame" x="20" y="850" width="374" height="264"/>
+                                                <mutableString key="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</mutableString>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hadith / Benefit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jir-lW-nZp">
+                                                <rect key="frame" x="20" y="1158" width="374" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fSy-5g-HG1">
+                                                <rect key="frame" x="20" y="1190" width="374" height="264"/>
+                                                <mutableString key="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</mutableString>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="Yj7-3S-ImB" firstAttribute="leading" secondItem="Il2-mA-Po4" secondAttribute="leading" constant="20" id="13H-V2-hbG"/>
+                                            <constraint firstAttribute="trailing" secondItem="fSy-5g-HG1" secondAttribute="trailing" constant="20" id="4YI-CV-FNq"/>
+                                            <constraint firstItem="JHa-Xc-KlG" firstAttribute="leading" secondItem="Il2-mA-Po4" secondAttribute="leading" constant="20" id="562-bD-1uo"/>
+                                            <constraint firstAttribute="trailing" secondItem="JHa-Xc-KlG" secondAttribute="trailing" constant="20" id="5rF-Za-Je0"/>
+                                            <constraint firstItem="C0s-GT-QMF" firstAttribute="leading" secondItem="Il2-mA-Po4" secondAttribute="leading" constant="20" id="6OD-Ax-07f"/>
+                                            <constraint firstItem="KUY-MG-RYt" firstAttribute="leading" secondItem="Il2-mA-Po4" secondAttribute="leading" constant="20" id="8Bq-0e-Gf4"/>
+                                            <constraint firstItem="KUY-MG-RYt" firstAttribute="top" secondItem="S0w-w3-0Ql" secondAttribute="bottom" constant="25" id="EGn-ze-VUM"/>
+                                            <constraint firstAttribute="trailing" secondItem="jir-lW-nZp" secondAttribute="trailing" constant="20" id="MBZ-O5-lrV"/>
+                                            <constraint firstItem="jir-lW-nZp" firstAttribute="top" secondItem="C0s-GT-QMF" secondAttribute="bottom" constant="44" id="NUr-Ko-fAA"/>
+                                            <constraint firstAttribute="trailing" secondItem="uZz-ne-24R" secondAttribute="trailing" constant="20" id="Rzp-dZ-xNx"/>
+                                            <constraint firstItem="YrC-bf-YZi" firstAttribute="leading" secondItem="Il2-mA-Po4" secondAttribute="leading" constant="20" id="UBu-bk-09H"/>
+                                            <constraint firstItem="S0w-w3-0Ql" firstAttribute="top" secondItem="Yj7-3S-ImB" secondAttribute="bottom" constant="8" id="VDi-up-LJQ"/>
+                                            <constraint firstItem="YrC-bf-YZi" firstAttribute="top" secondItem="z5x-D0-Zan" secondAttribute="bottom" constant="8" id="Vbu-Uk-ry4"/>
+                                            <constraint firstAttribute="trailing" secondItem="C0s-GT-QMF" secondAttribute="trailing" constant="20" id="Wxt-QD-1UU"/>
+                                            <constraint firstAttribute="trailing" secondItem="z5x-D0-Zan" secondAttribute="trailing" constant="20" id="ZRm-De-bhc"/>
+                                            <constraint firstItem="S0w-w3-0Ql" firstAttribute="top" secondItem="Yj7-3S-ImB" secondAttribute="bottom" constant="8" id="e4A-g8-hhK"/>
+                                            <constraint firstItem="uZz-ne-24R" firstAttribute="leading" secondItem="Il2-mA-Po4" secondAttribute="leading" constant="20" id="g9I-89-xmr"/>
+                                            <constraint firstItem="fSy-5g-HG1" firstAttribute="leading" secondItem="Il2-mA-Po4" secondAttribute="leading" constant="20" id="gua-BQ-ztg"/>
+                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="fSy-5g-HG1" secondAttribute="bottom" constant="20" id="h0D-5D-Hg0"/>
+                                            <constraint firstItem="z5x-D0-Zan" firstAttribute="leading" secondItem="Il2-mA-Po4" secondAttribute="leading" constant="20" id="h0O-qG-AXV"/>
+                                            <constraint firstAttribute="trailing" secondItem="KUY-MG-RYt" secondAttribute="trailing" constant="20" id="hOr-rB-HiY"/>
+                                            <constraint firstItem="uZz-ne-24R" firstAttribute="top" secondItem="JHa-Xc-KlG" secondAttribute="bottom" constant="19.5" id="j9B-UW-JtJ"/>
+                                            <constraint firstItem="z5x-D0-Zan" firstAttribute="top" secondItem="uZz-ne-24R" secondAttribute="bottom" constant="19" id="llg-vk-zYJ"/>
+                                            <constraint firstItem="S0w-w3-0Ql" firstAttribute="leading" secondItem="Il2-mA-Po4" secondAttribute="leading" constant="20" id="n9z-FL-xFz"/>
+                                            <constraint firstItem="C0s-GT-QMF" firstAttribute="top" secondItem="KUY-MG-RYt" secondAttribute="bottom" constant="8" id="r4F-d3-lYK"/>
+                                            <constraint firstItem="fSy-5g-HG1" firstAttribute="top" secondItem="jir-lW-nZp" secondAttribute="bottom" constant="8" id="r8q-xN-mmx"/>
+                                            <constraint firstItem="Yj7-3S-ImB" firstAttribute="top" secondItem="YrC-bf-YZi" secondAttribute="bottom" constant="14.5" id="t7m-vV-N2d"/>
+                                            <constraint firstAttribute="trailing" secondItem="S0w-w3-0Ql" secondAttribute="trailing" constant="20" id="tW6-oA-QZE"/>
+                                            <constraint firstAttribute="trailing" secondItem="Yj7-3S-ImB" secondAttribute="trailing" constant="20" id="tYI-Dx-zLd"/>
+                                            <constraint firstItem="JHa-Xc-KlG" firstAttribute="top" secondItem="Il2-mA-Po4" secondAttribute="top" constant="20" id="uG5-Hb-M0V"/>
+                                            <constraint firstItem="jir-lW-nZp" firstAttribute="leading" secondItem="Il2-mA-Po4" secondAttribute="leading" constant="20" id="ueV-cj-Hmh"/>
+                                            <constraint firstAttribute="trailing" secondItem="YrC-bf-YZi" secondAttribute="trailing" constant="20" id="vsW-eY-S3b"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Il2-mA-Po4" firstAttribute="leading" secondItem="NBr-zb-evA" secondAttribute="leading" id="4XK-9H-Ueb"/>
+                                    <constraint firstAttribute="bottom" secondItem="Il2-mA-Po4" secondAttribute="bottom" id="9RV-oy-ts1"/>
+                                    <constraint firstAttribute="trailing" secondItem="Il2-mA-Po4" secondAttribute="trailing" id="IOT-YI-zYw"/>
+                                    <constraint firstItem="Il2-mA-Po4" firstAttribute="top" secondItem="NBr-zb-evA" secondAttribute="top" id="ZRh-WS-Rwj"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="82i-Dm-EPu"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="q2L-eQ-YGc"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="NBr-zb-evA" firstAttribute="top" secondItem="pw8-fJ-Aed" secondAttribute="top" id="A1e-UN-NzG"/>
+                            <constraint firstItem="NBr-zb-evA" firstAttribute="leading" secondItem="pw8-fJ-Aed" secondAttribute="leading" id="Bmc-j2-oZQ"/>
+                            <constraint firstItem="NBr-zb-evA" firstAttribute="trailing" secondItem="pw8-fJ-Aed" secondAttribute="trailing" id="Q6t-Y9-hjF"/>
+                            <constraint firstItem="Il2-mA-Po4" firstAttribute="height" secondItem="TSI-D1-jkJ" secondAttribute="height" priority="250" id="o1E-lD-KC5"/>
+                            <constraint firstItem="Il2-mA-Po4" firstAttribute="width" secondItem="TSI-D1-jkJ" secondAttribute="width" id="oaP-7o-sQg"/>
+                            <constraint firstAttribute="bottom" secondItem="NBr-zb-evA" secondAttribute="bottom" constant="20" symbolic="YES" id="yQV-rH-vbO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pw8-fJ-Aed"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="b8n-kW-aUt"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yfp-1Z-LwC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="815.94202898550736" y="-46.205357142857139"/>
         </scene>
     </scenes>
 </document>
