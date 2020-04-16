@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C8EB9378B68BE8F087A91E09 /* Pods_SalahAndDua.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D76F24636B3ED7F3059EC42F /* Pods_SalahAndDua.framework */; };
+		CE3102D02448E532006D964C /* 110_Besmellah_Normal.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE3102CF2448E024006D964C /* 110_Besmellah_Normal.ttf */; };
+		CE3102D22448E539006D964C /* Scheherazade-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE3102CE2448CE91006D964C /* Scheherazade-Regular.ttf */; };
 		CE441771244127B700B2E378 /* Extension+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE441770244127B700B2E378 /* Extension+Util.swift */; };
 		CE4DEC4624420669000E517E /* MyUserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4DEC4524420669000E517E /* MyUserDefault.swift */; };
 		CE51CF0E243DF7090085D84E /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE51CF0D243DF7090085D84E /* ApiService.swift */; };
@@ -33,6 +35,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE3102CE2448CE91006D964C /* Scheherazade-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Scheherazade-Regular.ttf"; sourceTree = "<group>"; };
+		CE3102CF2448E024006D964C /* 110_Besmellah_Normal.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 110_Besmellah_Normal.ttf; sourceTree = "<group>"; };
+		CE3102D42448E6EC006D964C /* KFGQPC Uthmanic Script HAFS Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KFGQPC Uthmanic Script HAFS Regular.otf"; sourceTree = "<group>"; };
+		CE3102D52448E7DC006D964C /* Amiri-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Amiri-BoldItalic.ttf"; sourceTree = "<group>"; };
+		CE3102D62448E7DC006D964C /* Amiri-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Amiri-Bold.ttf"; sourceTree = "<group>"; };
+		CE3102D72448E7DC006D964C /* Amiri-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Amiri-Italic.ttf"; sourceTree = "<group>"; };
+		CE3102D82448E7DC006D964C /* Amiri-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Amiri-Regular.ttf"; sourceTree = "<group>"; };
 		CE441770244127B700B2E378 /* Extension+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Util.swift"; sourceTree = "<group>"; };
 		CE4DEC4524420669000E517E /* MyUserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUserDefault.swift; sourceTree = "<group>"; };
 		CE51CF0D243DF7090085D84E /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
@@ -81,6 +90,20 @@
 				CE4DEC4524420669000E517E /* MyUserDefault.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		CE3102CC2448CD5C006D964C /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				CE3102CF2448E024006D964C /* 110_Besmellah_Normal.ttf */,
+				CE3102D42448E6EC006D964C /* KFGQPC Uthmanic Script HAFS Regular.otf */,
+				CE3102CE2448CE91006D964C /* Scheherazade-Regular.ttf */,
+				CE3102D62448E7DC006D964C /* Amiri-Bold.ttf */,
+				CE3102D52448E7DC006D964C /* Amiri-BoldItalic.ttf */,
+				CE3102D72448E7DC006D964C /* Amiri-Italic.ttf */,
+				CE3102D82448E7DC006D964C /* Amiri-Regular.ttf */,
+			);
+			path = fonts;
 			sourceTree = "<group>";
 		};
 		CE44176C2441266900B2E378 /* Extensions */ = {
@@ -184,6 +207,7 @@
 		CEE3EDDF243B8374006C1810 /* SalahAndDua */ = {
 			isa = PBXGroup;
 			children = (
+				CE3102CC2448CD5C006D964C /* fonts */,
 				CE87A295243F768800374B6C /* Shared */,
 				CE51CF0D243DF7090085D84E /* ApiService.swift */,
 				CEE3EDF4243B847F006C1810 /* Features */,
@@ -359,7 +383,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE3102D02448E532006D964C /* 110_Besmellah_Normal.ttf in Resources */,
 				CEF7D960243B8D0900F8E3A2 /* Home.storyboard in Resources */,
+				CE3102D22448E539006D964C /* Scheherazade-Regular.ttf in Resources */,
 				CEE3EDED243B8376006C1810 /* LaunchScreen.storyboard in Resources */,
 				CEE3EDEA243B8376006C1810 /* Assets.xcassets in Resources */,
 				CE8F2C282445F4CF00927C6A /* Dua.storyboard in Resources */,

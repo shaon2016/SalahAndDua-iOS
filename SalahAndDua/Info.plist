@@ -2,6 +2,13 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Scheherazade-Regular.ttf</string>
+		<string>KFGQPC Uthmanic Script HAFS Regular.otf</string>
+		<string>110_Besmellah_Normal.ttf</string>
+		<string>Amiri-Regular.ttf</string>
+	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>We need your location to show location based calendar and prayer time</string>
 	<key>CFBundleDevelopmentRegion</key>

@@ -10,27 +10,39 @@ import UIKit
 
 class DuaDetailsVC: UIViewController {
 
-    var duaDetail : DuaDetail? {
-        didSet {
-            
-        }
-    }
+    @IBOutlet weak var duaArabicLabel: UILabel!
+     @IBOutlet weak var duaNoteLabel: UILabel!
+    @IBOutlet weak var referenceLabel: UILabel!
+    @IBOutlet weak var pronunciationLabel: UILabel!
+    @IBOutlet weak var translationLabel: UILabel!
+    @IBOutlet weak var hadithLabel: UILabel!
+    
+    var duaDetail : DuaDetail?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        updateView()
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func updateView() {
+        duaArabicLabel.text = duaDetail?.duaArabic
+    
+//        guard let customFont = UIFont(name: "KFGQPC-Uthmanic-Script-HAFS-Regular", size: 30) else {
+//            fatalError("""
+//                Failed to load the "CustomFont-Light" font.
+//                Make sure the font file is included in the project and the font name is spelled correctly.
+//                """
+//            )
+//        }
+//        
+//        duaArabicLabel.font = customFont
+//        
+        duaNoteLabel.text = duaDetail?.duaNote
+        referenceLabel.text = duaDetail?.reference
+        pronunciationLabel.text = duaDetail?.pronunciation
+        translationLabel.text = duaDetail?.translation
+        hadithLabel.text = duaDetail?.hadithOrBenefit
     }
-    */
-
 }
