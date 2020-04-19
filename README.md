@@ -15,5 +15,7 @@ Dua List
 
 ![](images/dua.png)
 
+
 Dua Details
+
 ![](images/dua_details.png)
