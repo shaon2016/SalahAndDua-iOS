@@ -129,7 +129,7 @@ class HomeVC: UIViewController {
     }
     
     private func setTitle() {
-        title = "Home"
+        navigationItem.title = "Home"
         let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
     }

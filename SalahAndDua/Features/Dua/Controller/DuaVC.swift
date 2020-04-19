@@ -22,7 +22,7 @@ class DuaVC: UITableViewController {
     }
     
     private func setTitle() {
-           title = "Dua"
+           navigationItem.title = "Dua"
            let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
            navigationController?.navigationBar.titleTextAttributes = textAttributes
        }
